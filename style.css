@@ -1,0 +1,96 @@
+.wrapper {
+    max-width: 1024px;
+    display: block;
+    margin: auto;
+    height: auto;
+    padding: 0px 20px 0px 20px;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+/* LIST */
+.todo__nainBox {
+    padding: 150px 0 0 0;
+    display: block;
+    position: relative;
+    max-width: 650px;
+    margin:0 auto;  
+}
+.todo__searsch {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: auto;
+    max-width: 553px;
+}
+.input__btn{
+    max-width: 553px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+.textArea {
+    background-color: aliceblue;
+    color: black;
+    padding: 5px;
+    display: inline-block;
+    width: 500px;
+    border: none;
+}
+.add__button {
+    display: inline;
+    background-color: blanchedalmond;
+    color: black;
+    transform: none;
+    border-radius: 50%;
+    border: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.add__button:hover {
+    opacity: 1;
+}
+/* Buttons */
+
+.enather__btn{
+    display: block;
+    margin-top: 10px;
+}
+.btn {
+    display: inline;
+    float: left;
+    width: 184px;
+    border: ;
+    position: relative;
+    padding: 20px;
+}
+.history {
+    transform: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.history:hover {
+    opacity: 1;
+}
+
+.active:hover{
+    opacity: 1;
+}
+.active {
+    transform: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.deleted:hover{
+    opacity: 1;
+}
+.deleted {
+    transform: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
