@@ -17,7 +17,7 @@
     font-size: 50px;
     color: green;
     width: 100px;
-    left: 40%;
+    left: 39%;
     font-family: 'Roboto', sans-serif;
 }
 .list{
@@ -161,4 +161,65 @@
     display: block;
     height: auto;
     padding: 10px 0px 10px 0;
+}
+.ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.listUL {
+    background-color: white;
+    position: relative;
+    display: block;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.2s;
+    list-style: none;
+    width: 92%;
+    font-size: 18px;
+}
+.ul li {
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    transition: 0.2s;
+    user-select: none;
+}
+.ul li:nth-child(odd){
+    background: gray;
+}
+.ul li:hover {
+    background: #dddddd;
+}
+.ul li.checked{
+    background: #888888;
+    color: #ffffff;
+    text-decoration: line-through;
+}
+.ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    height: 15px;
+    width: 7px;
+    top: 10px;
+    transform: rotate(45deg);
+}
+.border {
+    border: 2px #008000;
+}
+.close {
+    position: absolute;
+    display: inline;
+    background-color: yellowgreen;
+    color: black;
+    right: 0;
+    top: 0;
+    padding: 0px 7px 0px 7px;
+}
+.close:hover{
+    background: #f44336;
+    color: white;
 }
