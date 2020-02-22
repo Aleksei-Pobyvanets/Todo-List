@@ -7,6 +7,26 @@
     position: relative;
     font-family: 'Roboto', sans-serif;
 }
+.back {
+    background-color: black;
+}
+.TODO{
+    top: 150px;
+    position: relative;
+    display: inline;
+    font-size: 50px;
+    color: green;
+    width: 100px;
+    left: 40%;
+    font-family: 'Roboto', sans-serif;
+}
+.list{
+    position: relative;
+    display: inline;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
 /* LIST */
 .todo__nainBox {
     padding: 150px 0 0 0;
@@ -56,6 +76,7 @@
 .enather__btn{
     display: block;
     margin-top: 10px;
+    margin-bottom: 100px;
 }
 .btn {
     display: inline;
@@ -64,6 +85,7 @@
     border: ;
     position: relative;
     padding: 20px;
+    height: auto;
 }
 .history {
     transform: none;
@@ -74,17 +96,15 @@
 .history:hover {
     opacity: 1;
 }
-
-.active:hover{
+.activate:hover{
     opacity: 1;
 }
-.active {
+.activate {
     transform: none;
     cursor: pointer;
     opacity: 0.6;
     transition: 0.3s;
 }
-
 .deleted:hover{
     opacity: 1;
 }
@@ -93,4 +113,52 @@
     cursor: pointer;
     opacity: 0.6;
     transition: 0.3s;
+}
+/* BTNS */
+.history__container {
+    width: 553px;
+    display: none;
+    position: relative;
+    padding: 10px 40px 10px 0;
+}
+.activate__container {
+    width: 553px;
+    display: none;
+    position: relative;
+    padding: 10px 0 10px 0;
+}
+.deleted__container {
+    width: 553px;
+    display: none;
+    position: relative;
+    padding: 10px 0 10px 0;
+}
+.inp {
+    width: 360px;
+    float: left;
+    padding: 10px 0px 10px 0px;
+    font-size: 16px;
+    display: inline;
+}
+.act__btn {
+    color: green;
+}
+.ggBTN {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 8px 6px 5px 6px;
+    cursor: pointer;
+}
+.delet__btn {
+    color: red;
+}
+.active {
+    display: block;
+    height: auto;
+    padding: 10px 0px 10px 0;
 }
