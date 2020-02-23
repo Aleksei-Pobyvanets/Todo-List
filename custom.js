@@ -1,36 +1,11 @@
-function historyOpenButton() {
-    document.getElementById("historyBTN").classList.toggle('active');
-  }
+document.addEventListener("DOMContentLoaded", function(event) {
+  console.log("DOM fully loaded and parsed");
 
-  function activateOpenButton() {
-    document.getElementById("activateBTN").classList.toggle('active');
-  }
-  
-  function deletedOpenButton() {
-    document.getElementById("deletedBTN").classList.toggle('active');
-  }
-
-// <div class="history__container" id="historyBTN">
-//     <input type="text" class="history__container inp">
-//     <button class="act__btn ggBTN" id="act__btn">Activate</button>
-//     <button class="delet__btn ggBTN" id="delet__btn">Delete</button>
-// </div>
-// <div class="activate__container" id="activateBTN">
-//     <input type="text" class="active__container inp">
-//     <button class="act__btn ggBTN" id="act__btn">Activate</button>
-//     <button class="delet__btn ggBTN" id="delet__btn">Delete</button>  
-// </div>
-// <div class="deleted__container" id="deletedBTN">
-//     <input type="text" class="deleted__container inp">
-//     <button class="act__btn ggBTN" id="act__btn">Activate</button>
-//     <button class="delet__btn ggBTN" id="delet__btn">Delete</button>   
-// </div>
-
-var list = document.querySelector('ul');
+  var list = document.querySelector('ul');
 list.addEventListener('click', function (ev){
   if(ev.target.tagName === 'LI'){
     ev.target.classList.toggle('clecked');
-  } else if(ev.target.tagName === 'SPAN'){
+  } else if(ev.target.tagName === 'BUTTON'){
     var div = ev.target.parentNode;
     div.remove();
   }
@@ -48,32 +23,18 @@ function newElement(){
         document.getElementById('list').appendChild(li);
     }
     document.getElementById('textArea__searsch').value = "";
-    var span = document.createElement('SPAN');
+
+    var span = document.createElement('BUTTON');
     var text = document.createTextNode('X');
     span.className = 'close';
     span.appendChild(text);
     li.appendChild(span);
-     
 }
 
-function keyPress(){
-    if (e.keyCode === 13) {
-      newElement();
-    }
-}
+var cta = document.getElementById('cta');
+cta.addEventListener('click', function(e){
+  e.preventDefault();
+  newElement();
+})
 
-
-// (function() {
-//   document.querySelector('input').addEventListener('keydown', function(e) {
-//     if (e.keyCode === 13) {
-//       console.log(this.value);
-//     }
-//   });
-// })();
-
-// let panes = document.querySelectorAll('.pane');
-
-//     for(let pane of panes) {
-//       pane.insertAdjacentHTML("afterbegin", '<button class="remove-button">[x]</button>');
-//       pane.firstChild.onclick = () => pane.remove();
-//     }
+});
