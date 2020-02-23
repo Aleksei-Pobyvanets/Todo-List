@@ -27,7 +27,7 @@ function historyOpenButton() {
 // </div>
 
 var list = document.querySelector('ul');
-list.addEventListener('click', function(ev){
+list.addEventListener('click', function (ev){
   if(ev.target.tagName === 'LI'){
     ev.target.classList.toggle('clecked');
   } else if(ev.target.tagName === 'SPAN'){
@@ -42,7 +42,7 @@ function newElement(){
   var inputValue = document.getElementById('textArea__searsch').value;
   var newEl = document.createTextNode(inputValue);
   li.appendChild(newEl);
-    if(inputValue === ""){
+    if(inputValue == ""){
         alert("Введите текст")
     } else {
         document.getElementById('list').appendChild(li);
@@ -53,6 +53,7 @@ function newElement(){
     span.className = 'close';
     span.appendChild(text);
     li.appendChild(span);
+     
 }
 
 function keyPress(){
@@ -65,8 +66,14 @@ function keyPress(){
 // (function() {
 //   document.querySelector('input').addEventListener('keydown', function(e) {
 //     if (e.keyCode === 13) {
-//       // можете делать все что угодно со значением текстового поля
 //       console.log(this.value);
 //     }
 //   });
 // })();
+
+// let panes = document.querySelectorAll('.pane');
+
+//     for(let pane of panes) {
+//       pane.insertAdjacentHTML("afterbegin", '<button class="remove-button">[x]</button>');
+//       pane.firstChild.onclick = () => pane.remove();
+//     }
