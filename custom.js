@@ -54,3 +54,19 @@ function newElement(){
     span.appendChild(text);
     li.appendChild(span);
 }
+
+function keyPress(){
+    if (e.keyCode === 13) {
+      newElement();
+    }
+}
+
+
+// (function() {
+//   document.querySelector('input').addEventListener('keydown', function(e) {
+//     if (e.keyCode === 13) {
+//       // можете делать все что угодно со значением текстового поля
+//       console.log(this.value);
+//     }
+//   });
+// })();
