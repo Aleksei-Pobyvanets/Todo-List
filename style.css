@@ -76,7 +76,7 @@
 .enather__btn{
     display: block;
     margin-top: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 .btn {
     display: inline;
@@ -87,28 +87,28 @@
     padding: 20px;
     height: auto;
 }
-.history {
+.all {
     transform: none;
     cursor: pointer;
     opacity: 0.6;
     transition: 0.3s;
 }
-.history:hover {
+.all:hover {
     opacity: 1;
 }
-.activate:hover{
+.todo1:hover{
     opacity: 1;
 }
-.activate {
+.todo1 {
     transform: none;
     cursor: pointer;
     opacity: 0.6;
     transition: 0.3s;
 }
-.deleted:hover{
+.Completed:hover{
     opacity: 1;
 }
-.deleted {
+.Completed {
     transform: none;
     cursor: pointer;
     opacity: 0.6;
@@ -161,6 +161,7 @@
     display: block;
     height: auto;
     padding: 10px 0px 10px 0;
+    color: white;
 }
 .ul {
     list-style: none;
@@ -177,6 +178,8 @@
     list-style: none;
     width: 92%;
     font-size: 18px;
+    height: auto;
+    margin-top: 50px;
 }
 .ul li {
     cursor: pointer;
@@ -212,12 +215,12 @@
 }
 .close {
     position: absolute;
-    display: inline;
+    display: block;
     background-color: yellowgreen;
     color: black;
     right: 0;
-    top: 0;
     padding: 0px 7px 0px 7px;
+    margin-top: -20px;
 }
 .close:hover{
     background: #f44336;
