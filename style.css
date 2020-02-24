@@ -157,12 +157,6 @@
 .delet__btn {
     color: red;
 }
-.active {
-    display: block;
-    height: auto;
-    padding: 10px 0px 10px 0;
-    color: white;
-}
 .ul {
     list-style: none;
     padding: 0;
@@ -222,7 +216,29 @@
     padding: 0px 7px 0px 7px;
     margin-top: -20px;
 }
+.close1 {
+    position: absolute;
+    display: block;
+    background-color: yellowgreen;
+    color: black;
+    right: 0;
+    padding: 0px 7px 0px 7px;
+    margin-top: -20px;
+}
 .close:hover{
     background: #f44336;
     color: white;
+}
+.close1:hover{
+    background: #f44336;
+    color: white;
+}
+.allList {
+    display: none;
+}
+.active {
+    display: block;
+}
+.clecked {
+    text-decoration: line-through;
 }

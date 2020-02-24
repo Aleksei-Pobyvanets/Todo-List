@@ -14,10 +14,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // 
   // Li ul данные.
   // 
+
+  
+  var todoArray = [];
+  var completedArray = [];
+
+
 function newElement(){
   var li = document.createElement('li');
   li.classList.toggle('border')
   var inputValue = document.getElementById('textArea__searsch').value;
+  var allArray = inputValue + allArray;
   var newEl = document.createTextNode(inputValue);
   li.appendChild(newEl);
     if(inputValue == ""){
@@ -30,17 +37,13 @@ function newElement(){
     var span = document.createElement('BUTTON');
     var text = document.createTextNode('X');
     span.className = 'close';
-    span.appendChild(text);
+    span.appendChild(text);   
     li.appendChild(span);
     }
   deleteEl();
 }
 
-  var historyArray = []; 
-  var activeArray = [];
-  var deletedArray = [];
-
-
+  
   var delEl = document.getElementById('list');
   delEl.addEventListener('click', function (e){
     e.preventDefault();
@@ -57,10 +60,10 @@ function newElement(){
   // Кнопки истории и ТД.
   // 
   function allOpenButton() {
-    document.getElementById("sssss").classList.toggle('active');
+    document.getElementById("allOp").classList.toggle('active');
   }
   function todoOpenButton() {
-    document.getElementById("").classList.toggle('active');
+    document.getElementById("123").classList.toggle('active');
   }
   function completedOpenButton() {
     document.getElementById("").classList.toggle('active');
