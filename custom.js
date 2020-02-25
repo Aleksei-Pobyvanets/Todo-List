@@ -53,7 +53,8 @@ function newElement(){
   }
 
   function CreatDelEl(){
-    var delText = document.createTextNode(newEl)
+    var inputValue1 = document.getElementById('textArea__searsch').value;
+    var delText = document.createTextNode(inputValue1);
     var li1 = document.createElement('li');
     document.getElementById('list1').appendChild(li1)
     li1.appendChild(delText);
