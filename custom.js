@@ -15,23 +15,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Li ul данные.
   // 
 
-  
-  var todoArray = [];
-  var completedArray = [];
-
-
 function newElement(){
   var li = document.createElement('li');
   li.classList.toggle('border')
   var inputValue = document.getElementById('textArea__searsch').value;
-  var allArray = inputValue + allArray;
   var newEl = document.createTextNode(inputValue);
   li.appendChild(newEl);
     if(inputValue == ""){
         alert("Введите текст")
     } else {
         document.getElementById('list').appendChild(li);
-    }
+    } 
   document.getElementById('textArea__searsch').value = "";
   function deleteEl(){
     var span = document.createElement('BUTTON');
@@ -39,15 +33,44 @@ function newElement(){
     span.className = 'close';
     span.appendChild(text);   
     li.appendChild(span);
+
     }
   deleteEl();
+  filtr();
+  // function DeletedElement(){
+  
+  // }
 }
 
-  
+  function filtr(){
+    if(dele1 === true){
+      return CreatDelEl()
+    }else if(ff === true){
+      return 
+    }else if(ff === true){
+      return 
+    }
+  }
+
+  function CreatDelEl(){
+    var delText = document.createTextNode(newEl)
+    var li1 = document.createElement('li');
+    document.getElementById('list1').appendChild(li1)
+    li1.appendChild(delText);
+  }
+
+
+  // var delElem = document.getElementsByClassName('close');
+  // delElem.addEventListener('click', function (e){
+  //   e.preventDefault();
+  //   DeletedElement();
+  // })
+
   var delEl = document.getElementById('list');
-  delEl.addEventListener('click', function (e){
+  delEl.addEventListener('click', function dele1(e){
     e.preventDefault();
     deleteEl();
+    return true
   })
 
   var cta = document.getElementById('cta');
@@ -63,10 +86,10 @@ function newElement(){
     document.getElementById("allOp").classList.toggle('active');
   }
   function todoOpenButton() {
-    document.getElementById("123").classList.toggle('active');
+    document.getElementById("todoOp").classList.toggle('active');
   }
   function completedOpenButton() {
-    document.getElementById("").classList.toggle('active');
+    document.getElementById("compOp").classList.toggle('active');
   }
 
   var allOpenButton1 = document.getElementById('allOpenBtn');
