@@ -219,9 +219,9 @@
 .close1 {
     position: absolute;
     display: block;
-    background-color: yellowgreen;
+    background-color: rebeccapurple;
     color: black;
-    right: 0;
+    right: 30px;
     padding: 0px 7px 0px 7px;
     margin-top: -20px;
 }

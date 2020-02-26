@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   console.log("DOM fully loaded and parsed");
 
+  // function completBtn(){
+  //   var span2 = document.createElement('BUTTON');
+  //   var text2 = document.createTextNode('V');
+  //   span2.className = 'close1';
+  //   span2.appendChild(text2);
+  //   li.appendChild(span2)
+  //   // var btnCompl = document.getElementsByClassName('close1');
+  // }
+  
   var list = document.querySelector('ul');
   list.addEventListener('click', function (ev){
   if(ev.target.tagName === 'LI'){
@@ -27,45 +36,24 @@ function newElement(){
         document.getElementById('list').appendChild(li);
     } 
   document.getElementById('textArea__searsch').value = "";
+  function completBtn(){
+    var span2 = document.createElement('BUTTON');
+    var text2 = document.createTextNode('V');
+    span2.className = 'close1';
+    span2.appendChild(text2);
+    li.appendChild(span2)
+    // var btnCompl = document.getElementsByClassName('close1');
+  }
   function deleteEl(){
     var span = document.createElement('BUTTON');
     var text = document.createTextNode('X');
     span.className = 'close';
-    span.appendChild(text);   
+    span.appendChild(text);
     li.appendChild(span);
-
     }
   deleteEl();
-  filtr();
-  // function DeletedElement(){
-  
-  // }
+  completBtn()
 }
-
-  function filtr(){
-    if(dele1 === true){
-      return CreatDelEl()
-    }else if(ff === true){
-      return 
-    }else if(ff === true){
-      return 
-    }
-  }
-
-  function CreatDelEl(){
-    var inputValue1 = document.getElementById('textArea__searsch').value;
-    var delText = document.createTextNode(inputValue1);
-    var li1 = document.createElement('li');
-    document.getElementById('list1').appendChild(li1)
-    li1.appendChild(delText);
-  }
-
-
-  // var delElem = document.getElementsByClassName('close');
-  // delElem.addEventListener('click', function (e){
-  //   e.preventDefault();
-  //   DeletedElement();
-  // })
 
   var delEl = document.getElementById('list');
   delEl.addEventListener('click', function dele1(e){
