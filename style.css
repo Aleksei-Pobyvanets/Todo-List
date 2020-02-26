@@ -175,6 +175,20 @@
     height: auto;
     margin-top: 50px;
 }
+.listUL2 {
+    background-color: white;
+    position: relative;
+    display: block;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.2s;
+    list-style: none;
+    width: 92%;
+    font-size: 18px;
+    height: auto;
+    margin-top: 50px;
+    text-decoration: line-through;
+}
 .ul li {
     cursor: pointer;
     position: relative;
@@ -235,6 +249,14 @@
 }
 .allList {
     display: none;
+}
+.allList1 {
+    display: none;
+    background-color: sandybrown;
+}
+.allList2 {
+    display: none;
+    background-color: seagreen;
 }
 .active {
     display: block;

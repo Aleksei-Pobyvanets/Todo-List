@@ -1,25 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   console.log("DOM fully loaded and parsed");
-
-  // function completBtn(){
-  //   var span2 = document.createElement('BUTTON');
-  //   var text2 = document.createTextNode('V');
-  //   span2.className = 'close1';
-  //   span2.appendChild(text2);
-  //   li.appendChild(span2)
-  //   // var btnCompl = document.getElementsByClassName('close1');
-  // }
-  
-  var list = document.querySelector('ul');
-  list.addEventListener('click', function (ev){
-  if(ev.target.tagName === 'LI'){
-    ev.target.classList.toggle('clecked');
-  } else if(ev.target.tagName === 'BUTTON'){
-    var div = ev.target.parentNode;
-    div.remove();
-  }
-}, false);
-
   // 
   // Li ul данные.
   // 
@@ -36,14 +16,17 @@ function newElement(){
         document.getElementById('list').appendChild(li);
     } 
   document.getElementById('textArea__searsch').value = "";
+
+  // Кнопка Complete
   function completBtn(){
     var span2 = document.createElement('BUTTON');
     var text2 = document.createTextNode('V');
     span2.className = 'close1';
     span2.appendChild(text2);
-    li.appendChild(span2)
-    // var btnCompl = document.getElementsByClassName('close1');
+    li.appendChild(span2)    
   }
+
+  // Кнопка Delete
   function deleteEl(){
     var span = document.createElement('BUTTON');
     var text = document.createTextNode('X');
@@ -51,8 +34,40 @@ function newElement(){
     span.appendChild(text);
     li.appendChild(span);
     }
+
+  completBtn();
   deleteEl();
-  completBtn()
+
+  // При клике перекидывает значение в "Complete"
+  var list1 = document.querySelector('ul');
+  list1.addEventListener('click', function (ev){
+    var btnCompl = document.getElementsByClassName('close1');
+  if(ev.target = btnCompl){
+    
+    document.getElementById('list2').appendChild(li);
+  } else if(ev.target.className === 'close'){
+    var div = ev.target.parentNode;
+    div.remove();
+  }else if(ev.target.tagName === 'LI'){
+    var div = ev.target.parentNode;
+    div.remove();
+  }
+}, false);
+  // При клике перекидывает значение обратно в "list"
+// var list2 = document.querySelector('ul');
+//   list2.addEventListener('click', function (ev){
+//     var btnCompl = document.getElementsByClassName('close1');
+//   if(ev.target = btnCompl){
+//     document.getElementById('list').appendChild(li);
+//   } else if(ev.target.className === 'close'){
+//     var div = ev.target.parentNode;
+//     div.remove();
+//   }else if(ev.target.tagName === 'LI'){
+//     var div = ev.target.parentNode;
+//     div.remove();
+//   }
+//   }, false); 
+
 }
 
   var delEl = document.getElementById('list');
