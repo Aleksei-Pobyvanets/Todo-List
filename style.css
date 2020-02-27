@@ -55,215 +55,65 @@
     width: 500px;
     border: none;
 }
-.add__button {
-    display: inline;
-    background-color: blanchedalmond;
-    color: black;
-    transform: none;
-    border-radius: 50%;
-    border: none;
-    font-size: 14px;
-    padding: 10px 15px;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: 0.3s;
-}
-.add__button:hover {
-    opacity: 1;
-}
 /* Buttons */
-
-.enather__btn{
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 80px;
-}
-.btn {
+.buttons{
     display: inline;
-    float: left;
-    width: 184px;
-    border: ;
     position: relative;
-    padding: 20px;
-    height: auto;
+    left: 86%;
 }
-.all {
-    transform: none;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: 0.3s;
-}
-.all:hover {
-    opacity: 1;
-}
-.todo1:hover{
-    opacity: 1;
-}
-.todo1 {
-    transform: none;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: 0.3s;
-}
-.Completed:hover{
-    opacity: 1;
-}
-.Completed {
-    transform: none;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: 0.3s;
-}
-/* BTNS */
-.history__container {
-    width: 553px;
-    display: none;
-    position: relative;
-    padding: 10px 40px 10px 0;
-}
-.activate__container {
-    width: 553px;
-    display: none;
-    position: relative;
-    padding: 10px 0 10px 0;
-}
-.deleted__container {
-    width: 553px;
-    display: none;
-    position: relative;
-    padding: 10px 0 10px 0;
-}
-.inp {
-    width: 360px;
-    float: left;
-    padding: 10px 0px 10px 0px;
-    font-size: 16px;
-    display: inline;
-}
-.act__btn {
-    color: green;
-}
-.ggBTN {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    text-transform: uppercase;
+.complete{
+    border: none;
     background: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    padding: 8px 6px 5px 6px;
-    cursor: pointer;
+    color: black;
+    font-size: 18px;
 }
-.delet__btn {
+.remove{
+    border: none;
+    background: none;
+    color: black;
+    font-size: 18px;
+    padding: 0 10px 0 0;
+}
+.remove:hover{
     color: red;
 }
-.ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.completed:hover{
+    color: green;
 }
-.listUL {
-    background-color: white;
+.fli {
+    background: #ffffff;
+    padding: 10px;
     position: relative;
     display: block;
-    user-select: none;
-    cursor: pointer;
-    transition: 0.2s;
-    list-style: none;
-    width: 92%;
-    font-size: 18px;
-    height: auto;
-    margin-top: 50px;
 }
-.listUL2 {
-    background-color: white;
+.listUL{
     position: relative;
     display: block;
-    user-select: none;
-    cursor: pointer;
-    transition: 0.2s;
-    list-style: none;
-    width: 92%;
-    font-size: 18px;
-    height: auto;
-    margin-top: 50px;
-    text-decoration: line-through;
-}
-.ul li {
-    cursor: pointer;
+    margin: auto;
     position: relative;
-    font-size: 18px;
-    transition: 0.2s;
-    user-select: none;
-}
-.ul li:nth-child(odd){
-    background: gray;
-}
-.ul li:hover {
-    background: #dddddd;
-}
-.ul li.checked{
-    background: #888888;
-    color: #ffffff;
-    text-decoration: line-through;
-}
-.ul li.checked::before {
-    content: '';
-    position: absolute;
-    border-color: white;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    height: 15px;
-    width: 7px;
-    top: 10px;
-    transform: rotate(45deg);
-}
-.border {
-    border: 2px #008000;
-}
-.close {
-    position: absolute;
     display: block;
-    background-color: yellowgreen;
-    color: black;
-    right: 0;
-    padding: 0px 7px 0px 7px;
-    margin-top: -20px;
+    margin: auto;
+    padding: 20px 0px 10px 0px;
 }
-.close1 {
-    position: absolute;
+.listLi{
+    position: relative;
     display: block;
-    background-color: rebeccapurple;
-    color: black;
-    right: 30px;
-    padding: 0px 7px 0px 7px;
-    margin-top: -20px;
-}
-.close:hover{
-    background: #f44336;
-    color: white;
-}
-.close1:hover{
-    background: #f44336;
-    color: white;
-}
-.allList {
-    display: none;
-}
-.allList1 {
-    display: none;
-    background-color: sandybrown;
-}
-.allList2 {
-    display: none;
-    background-color: seagreen;
-}
-.active {
+    margin: auto;
+    position: relative;
     display: block;
+    margin: auto;
+    padding: 20px 0px 10px 0px;
+    background: #ffffff;
 }
-.clecked {
-    text-decoration: line-through;
+.navigation {
+    display: inline;
+    position: relative;
 }
-.deletedEl {
-    display: none;
+.btn {
+    width: 274px;
+    background: bisque;
+    border: 0px;
+    cursor: pointer;
+    padding: 10px 0 10px 0;
+    margin-top: 20px;
 }

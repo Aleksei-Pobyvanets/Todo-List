@@ -6,38 +6,29 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="custom.js"></script>
+    <script src="https://kit.fontawesome.com/1042277af0.js" crossorigin="anonymous"></script>
 </head>
 <body class="wrapper back">
     <h1 class="TODO">TODO<span class="list">List</span></h1>
     <div class="todo__nainBox">
         <div class="todo__nainBox todo__searsch">
             <div class="input__btn">
-            <form>
-            <input type="text" class="textArea" id="textArea__searsch" placeholder="Введите текст">
-            <input  class="add__button" type="submit" id="cta" value="+">
+            <input type="text" class="textArea" id="item" placeholder="Введите текст">
+            <button  class="add__button" id="add">+</button>
             </div>
-            <div class="enather__btn">
-            <input class="all btn" type="submit" value="all" id="allOpenBtn">
-            <input class="todo1 btn" type="submit" value="TODO" id="todoOpenBtn">
-            <input class="Completed btn" type="submit" value="Completed" id="completedOpenBtn">
-            </div>
-            <div id="allOp" class="allList">
-                <ul id="list" class="listUL">
-                    
+            <nav class="navigation">
+                <button class="btn" id="todo-btn">todo</button>
+                <button class="btn" id="complete-btn">completed</button>
+            </nav>
+            <div class="container">
+                <ul id="todo" class="listUL">
+
+                </ul>
+                <ul id="completed" class="listUL">
+
                 </ul>
             </div>
-            <div id="todoOp" class="allList1">
-                <ul id="list1" class="listUL">
-                    
-                </ul>
-            </div>
-            <div id="compOp" class="allList2">
-                <ul id="list2" class="listUL2">
-                    
-                </ul>
-            </div>
-            </form>
-        </div> 
+         </div>
     </div>
 </body>
 </html>
