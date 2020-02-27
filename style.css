@@ -58,7 +58,7 @@
 /* Buttons */
 .buttons{
     display: inline;
-    position: relative;
+    position: absolute;
     left: 86%;
 }
 .complete{
@@ -66,18 +66,19 @@
     background: none;
     color: black;
     font-size: 18px;
+    padding: 0 10px 0 10px;
 }
 .remove{
     border: none;
     background: none;
     color: black;
     font-size: 18px;
-    padding: 0 10px 0 0;
+    padding: 0 10px 0 10px
 }
 .remove:hover{
     color: red;
 }
-.completed:hover{
+.complete:hover{
     color: green;
 }
 .fli {
@@ -102,7 +103,7 @@
     position: relative;
     display: block;
     margin: auto;
-    padding: 20px 0px 10px 0px;
+    padding: 10px 10px 10px 10px;
     background: #ffffff;
 }
 .navigation {

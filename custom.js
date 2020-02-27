@@ -7,7 +7,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if(value) addItemTodo(value);
   });
 
-  function addItemTodo(text){
+function removeItem(){
+  var item = this.parentNode.parentNode;
+  var parent = item.parentNode;
+  parent.removeChild(item);
+}
+function completeItem(){
+  var item = this.parentNode.parentNode;
+  var parent = item.parentNode;
+  var id = parent.id;
+
+  var target = (id === 'todo') ? target = document.getElementById('completed') : target = document.getElementById('todo');
+  parent.removeChild(item);
+  target.insertBefore(item, target.childNodes[0]);
+}
+
+function addItemTodo(text){
   var list = document.getElementById('todo');
 
   var item = document.createElement('li');
@@ -19,18 +34,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var remove = document.createElement('button');
   remove.classList.add('remove');
-  remove.classList.add('for');
+  remove.classList.add('far');
   remove.classList.add('fa-trash-alt');
+  remove.addEventListener('click', removeItem)
+
   var complete = document.createElement('button');
   complete.classList.add('complete');
-  complete.classList.add('for');
+  complete.classList.add('far');
   complete.classList.add('fa-check-circle');
+  complete.addEventListener('click', completeItem)
 
   buttons.appendChild(remove);
   buttons.appendChild(complete);
   item.appendChild(buttons);
   list.appendChild(item)
-  }
+
+  list.insertBefore(item, list.childNodes[0]);
+
+  var value = document.getElementById('item').value = "";
+  value;
+}
 });
 
 
