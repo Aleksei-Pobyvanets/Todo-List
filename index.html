@@ -3,7 +3,7 @@
 <head>
 <title>TODO list</title>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="custom.js"></script>
     <script src="https://kit.fontawesome.com/1042277af0.js" crossorigin="anonymous"></script>
@@ -13,21 +13,23 @@
     <div class="todo__nainBox">
         <div class="todo__nainBox todo__searsch">
             <div class="input__btn">
-            <input type="text" class="textArea" id="item" placeholder="Введите текст">
+            <input type="text" class="textArea" id="item" placeholder="Enter your goal...">
             <button  class="add__button" id="add">+</button>
             </div>
             <nav class="navigation">
-                <button class="btn" id="todo-btn">todo</button>
-                <button class="btn" id="complete-btn">completed</button>
+                <button class="btn" id="todo-btn">ToDo</button>
+                <button class="btn" id="complete-btn">Completed</button>
             </nav>
-            <div class="container">
-                <ul id="todo" class="listUL">
-                    
-                </ul>
-                <ul id="completed" class="listUL">
+                <div id="todoBtn" class="">
+                    <ul id="todo" class="listUL">
+                        
+                    </ul>
+                </div>
+                <div id="completeBtn" class="Active">
+                    <ul id="completed" class="listUL">
 
-                </ul>
-            </div>
+                    </ul>
+                </div>
          </div>
     </div>
 </body>
