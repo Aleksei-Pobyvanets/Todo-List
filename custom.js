@@ -1,21 +1,46 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   console.log("DOM fully loaded and parsed");
 
+  var data = {
+    todo: [],
+    complete: []
+  }
 
   document.getElementById('add').addEventListener('click', function(){
   var value = document.getElementById('item').value;
-  if(value) addItemTodo(value);
+    if(value) {
+      data.todo.push(value);
+      addItemTodo(value);
+    }
   });
 
 function removeItem(){
   var item = this.parentNode.parentNode;
   var parent = item.parentNode;
+  var id = parent.id;
+  var value = item.innerText;
+  
+  if(id === 'todo'){
+    data.todo.splice(data.todo.indexOf(value), 1);
+  }else{
+    data.complete.splice(data.complete.indexOf(value), 1);
+  }
+  
   parent.removeChild(item);
 }
 function completeItem(){
   var item = this.parentNode.parentNode;
   var parent = item.parentNode;
   var id = parent.id;
+  var value = item.innerText;
+  if(id === 'todo'){
+    data.todo.splice(data.todo.indexOf(value), 1);
+    data.complete.push(value);
+  }else{
+    data.complete.splice(data.complete.indexOf(value), 1);
+    data.todo.push(value);
+  }
+  
 
   var target = (id === 'todo') ? target = document.getElementById('completed') : target = document.getElementById('todo');
   parent.removeChild(item);
