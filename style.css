@@ -58,13 +58,12 @@
     width: 460px;
     border: none;
     font-size: 16px;
-    
 }
 /* Buttons */
 .buttons{
     display: inline;
     position: absolute;
-    left: 86%;
+    left: 73%;
 }
 .complete{
     border: none;
@@ -93,15 +92,21 @@
     display: block;
 }
 .listUL{
-    margin: auto;
     position: relative;
     padding: 20px 0px 10px 0px;
+    width: 275px;
+}
+.listUL2{
+    position: relative;
+    padding: 20px 0px 10px 0px;
+    width: 275px;
 }
 .listLi{
     position: relative;
     margin: auto;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 70px 10px 10px;
     background: #ffffff;
+    list-style-type: none;
 }
 .navigation {
     display: inline;
@@ -121,7 +126,7 @@
 .btn:hover{
     color: #ffffff;
 }
-.listUL#completed li {
+.listUL2#completed li {
     background: #DCFFDA;
     text-decoration: line-through;
 }
@@ -144,9 +149,15 @@
     padding: 0;
 }
 .add__button:hover {
-    opacity: 0.6;
-    border: 1px #0E4504;
+    opacity: 0,6;
+    border: 2px #0A3C04;
     color: #ffffff;
+}
+.add__button:focus{
+    outline: none;
+}
+.textArea:focus{
+    outline: none;
 }
 .Active {
     display: none;
@@ -157,3 +168,14 @@
 .completeBtnForAct{
     display: none;
 }
+.divList{
+    width: 275px;
+    float: left;
+    position: relative;
+    display: block;
+}
+.divList1{
+    width: 275px;
+    float: right;
+}
+

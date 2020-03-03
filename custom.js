@@ -90,27 +90,45 @@ function addItemTodo(text){
 
 
 // Drag n Drop
-var list_items = document.querySelectorAll('item');
-var lists = document.querySelectorAll('todo');
+var list_items = document.querySelectorAll('#item');
+var lists = document.querySelectorAll('.Dr');
 
 var draggedItem = null;
 
 for(var i = 0; i < list_items.length; i++){
-    const item = list_items[i];
+    const itemDR = list_items[i];
 
-    item.addEventListener('dragstart', function(){
-      draggedItem = item ;
+    itemDR.addEventListener('dragstart', function(){
+      draggedItem = itemDR ;
       setTimeout(function(){
-          item.style.display = 'none';
+        itemDR.style.display = 'none';
         }, 0);
     });
-
-    item.addEventListener('dragend', function(){
+    itemDR.addEventListener('dragend', function(){
       setTimeout(function(){
           draggedItem.style.display = 'block';
           draggedItem = null;
       }, 0);
     });
+
+    for(var j = 0; j < lists.length; j++){
+      const list = lists[j];
+
+      list.addEventListener('dragover', function (e) {
+        e.preventDefault();
+      })
+      list.addEventListener('dragenter', function (e) {
+        e.preventDefault();
+        this.style.backgroundColor = '#7C7C7C';
+      })
+      list.addEventListener('dragleave', function (e) {
+        this.style.backgroundColor = '#AEAEAE';
+      })
+      list.addEventListener('drop', function (e) {
+        this.append(draggedItem);
+        this.style.backgroundColor = '#AEAEAE';
+      })
+    }
 }
 
 
