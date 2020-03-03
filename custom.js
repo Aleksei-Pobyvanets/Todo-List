@@ -60,6 +60,8 @@ function addItemTodo(text){
   var list = document.getElementById('todo');
   var item = document.createElement('li');
   item.classList.add('listLi');
+  item.setAttribute('draggable', true);
+  item.setAttribute('id', 'item')
   item.innerText = text;
 
   var buttons = document.createElement('div');
@@ -86,12 +88,37 @@ function addItemTodo(text){
 
 }
 
+
+// Drag n Drop
+var list_items = document.querySelectorAll('item');
+var lists = document.querySelectorAll('todo');
+
+var draggedItem = null;
+
+for(var i = 0; i < list_items.length; i++){
+    const item = list_items[i];
+
+    item.addEventListener('dragstart', function(){
+      draggedItem = item ;
+      setTimeout(function(){
+          item.style.display = 'none';
+        }, 0);
+    });
+
+    item.addEventListener('dragend', function(){
+      setTimeout(function(){
+          draggedItem.style.display = 'block';
+          draggedItem = null;
+      }, 0);
+    });
+}
+
+
 document.getElementById('todo-btn').addEventListener('click', function(){
   document.getElementById("todoBtn").classList.toggle('Active');
 })
 document.getElementById('complete-btn').addEventListener('click', function(){
   document.getElementById("completeBtn").classList.toggle('Active');
 })
-
 
 });
