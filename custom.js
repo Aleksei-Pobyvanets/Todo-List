@@ -90,8 +90,8 @@ function addItemTodo(text){
 
 
 // Drag n Drop
-var list_items = document.querySelectorAll('#item');
-var lists = document.querySelectorAll('.Dr');
+const list_items = document.querySelectorAll('#item');
+const lists = document.querySelectorAll('.Dr');
 
 var draggedItem = null;
 
@@ -100,12 +100,12 @@ for(var i = 0; i < list_items.length; i++){
 
     itemDR.addEventListener('dragstart', function(){
       draggedItem = itemDR ;
-      setTimeout(function(){
+      setTimeout(() =>{
         itemDR.style.display = 'none';
         }, 0);
     });
     itemDR.addEventListener('dragend', function(){
-      setTimeout(function(){
+      setTimeout(() => {
           draggedItem.style.display = 'block';
           draggedItem = null;
       }, 0);
@@ -125,7 +125,7 @@ for(var i = 0; i < list_items.length; i++){
         this.style.backgroundColor = '#AEAEAE';
       })
       list.addEventListener('drop', function (e) {
-        this.append(draggedItem);
+        this.append(list_items);
         this.style.backgroundColor = '#AEAEAE';
       })
     }
