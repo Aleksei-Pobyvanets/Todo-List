@@ -58,10 +58,12 @@ function completeItem(){
 
 function addItemTodo(text){
   var list = document.getElementById('todo');
+  var divLI = document.createElement('div')
   var item = document.createElement('li');
+  divLI.classList.add('divLI');
   item.classList.add('listLi');
-  item.setAttribute('draggable', true);
-  item.setAttribute('id', 'item')
+  divLI.setAttribute('draggable', true);
+  divLI.setAttribute('id', 'item')
   item.innerText = text;
 
   var buttons = document.createElement('div');
@@ -82,7 +84,7 @@ function addItemTodo(text){
   buttons.appendChild(remove);
   buttons.appendChild(complete);
   item.appendChild(buttons);
-  list.appendChild(item)
+  divLI.appendChild(item)
 
   list.insertBefore(item, list.childNodes[0]);
 
@@ -93,21 +95,22 @@ function addItemTodo(text){
 const list_items = document.querySelectorAll('#item');
 const lists = document.querySelectorAll('.Dr');
 
+
 var draggedItem = null;
 
 for(var i = 0; i < list_items.length; i++){
     const itemDR = list_items[i];
 
     itemDR.addEventListener('dragstart', function(){
-      draggedItem = itemDR ;
-      setTimeout(() =>{
+      draggedItem = itemDR;
+      setTimeout(function (){
         itemDR.style.display = 'none';
         }, 0);
     });
     itemDR.addEventListener('dragend', function(){
-      setTimeout(() => {
-          draggedItem.style.display = 'block';
-          draggedItem = null;
+      setTimeout(function (){
+        draggedItem.style.display = 'block';
+        draggedItem = null;
       }, 0);
     });
 
@@ -121,11 +124,8 @@ for(var i = 0; i < list_items.length; i++){
         e.preventDefault();
         this.style.backgroundColor = '#7C7C7C';
       })
-      list.addEventListener('dragleave', function (e) {
-        this.style.backgroundColor = '#AEAEAE';
-      })
-      list.addEventListener('drop', function (e) {
-        this.append(list_items);
+      list.addEventListener('drop', function () {
+        this.append(draggedItem);
         this.style.backgroundColor = '#AEAEAE';
       })
     }

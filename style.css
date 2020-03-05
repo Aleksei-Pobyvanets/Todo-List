@@ -107,6 +107,12 @@
     padding: 10px 70px 10px 10px;
     background: #ffffff;
     list-style-type: none;
+    display: block;
+}
+.divLI {
+    position: relative;
+    background: #ffffff;
+    display: block;
 }
 .navigation {
     display: inline;
