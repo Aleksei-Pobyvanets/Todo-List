@@ -92,44 +92,44 @@ function addItemTodo(text){
 
 
 // Drag n Drop
-const list_items = document.querySelectorAll('#item');
-const lists = document.querySelectorAll('.Dr');
+// const list_items = document.querySelectorAll('#item');
+// const lists = document.querySelectorAll('.Dr');
 
 
-var draggedItem = null;
+// var draggedItem = null;
 
-for(var i = 0; i < list_items.length; i++){
-    const itemDR = list_items[i];
+// for(var i = 0; i < list_items.length; i++){
+//     const itemDR = list_items[i];
 
-    itemDR.addEventListener('dragstart', function(){
-      draggedItem = itemDR;
-      setTimeout(function (){
-        itemDR.style.display = 'none';
-        }, 0);
-    });
-    itemDR.addEventListener('dragend', function(){
-      setTimeout(function (){
-        draggedItem.style.display = 'block';
-        draggedItem = null;
-      }, 0);
-    });
+//     itemDR.addEventListener('dragstart', function(){
+//       draggedItem = itemDR;
+//       setTimeout(function (){
+//         itemDR.style.display = 'none';
+//         }, 0);
+//     });
+//     itemDR.addEventListener('dragend', function(){
+//       setTimeout(function (){
+//         draggedItem.style.display = 'block';
+//         draggedItem = null;
+//       }, 0);
+//     });
 
-    for(var j = 0; j < lists.length; j++){
-      const list = lists[j];
+//     for(var j = 0; j < lists.length; j++){
+//       const list = lists[j];
 
-      list.addEventListener('dragover', function (e) {
-        e.preventDefault();
-      })
-      list.addEventListener('dragenter', function (e) {
-        e.preventDefault();
-        this.style.backgroundColor = '#7C7C7C';
-      })
-      list.addEventListener('drop', function () {
-        this.append(draggedItem);
-        this.style.backgroundColor = '#AEAEAE';
-      })
-    }
-}
+//       list.addEventListener('dragover', function (e) {
+//         e.preventDefault();
+//       })
+//       list.addEventListener('dragenter', function (e) {
+//         e.preventDefault();
+//         this.style.backgroundColor = '#7C7C7C';
+//       })
+//       list.addEventListener('drop', function () {
+//         this.append(draggedItem);
+//         this.style.backgroundColor = '#AEAEAE';
+//       })
+//     }
+// }
 
 
 document.getElementById('todo-btn').addEventListener('click', function(){
