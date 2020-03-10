@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     if (value) {
       data.todo.push(value);
+      console.log(data)
       addItemTodo(value);
       var value = document.getElementById('item').value = "";
     }
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     } else {
       data.complete.splice(data.complete.indexOf(value), 1);
     }
-
+    console.log(data)
     parent.removeChild(item);
   }
 
@@ -53,8 +54,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       data.complete.splice(data.complete.indexOf(value), 1);
       data.todo.push(value);
     }
-
-
+    
     var target = (id === 'todo') ? target = document.getElementById('completed') : target = document.getElementById('todo');
     parent.removeChild(item);
     target.insertBefore(item, target.childNodes[0]);
@@ -114,11 +114,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     dragSrcEl = this;
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/html', this.innerHTML);
+    console.log(dragStart)
+
   };
 
   function dragOver(e) {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
+    console.log(dragOver)
     return false;
   }
 
@@ -127,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       dragSrcEl.innerHTML = this.innerHTML;
       this.innerHTML = e.dataTransfer.getData('text/html');
     }
+    console.log(dragDrop)
     return false;
   }
 
@@ -143,12 +147,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     el.addEventListener('drop', dragDrop, false);
   }
   var listItens = document.querySelectorAll('li');
-  console.log(listItens);
   [].forEach.call(listItens, function (item) {
     addEventsDragAndDrop(item);
   });
-
-
 
 
   document.getElementById('todo-btn').addEventListener('click', function () {
