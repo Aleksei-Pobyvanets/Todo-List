@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log(data)
     parent.removeChild(item);
   }
+  
 
   function completeItem() {
     var item = this.parentNode.parentNode;
@@ -54,10 +55,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
       data.complete.splice(data.complete.indexOf(value), 1);
       data.todo.push(value);
     }
-    
     var target = (id === 'todo') ? target = document.getElementById('completed') : target = document.getElementById('todo');
     parent.removeChild(item);
     target.insertBefore(item, target.childNodes[0]);
+  }
+  function btn() {
+    completeItem();
+    removeItem();
   }
 
   function buttons(todoItem) {
@@ -110,12 +114,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
   //Drag n Drop
+  var elemLi = document.querySelector('li');
+  var elemUl = document.querySelectorAll('.Dr');
+
   function dragStart(e) {
     dragSrcEl = this;
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text/html', this.innerHTML);
     console.log(dragStart)
-
   };
 
   function dragOver(e) {
@@ -129,17 +135,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (dragSrcEl != this) {
       dragSrcEl.innerHTML = this.innerHTML;
       this.innerHTML = e.dataTransfer.getData('text/html');
+      console.log(dragDrop)
     }
-    console.log(dragDrop)
     return false;
   }
 
-  function dragEnd(e) {
-    var listItens = document.querySelectorAll('.draggable');
-    [].forEach.call(listItens, function (item) {
-      item.classList.remove('over');
-    });
-  }
+  // function dragEnd(e) {
+  //   var listItens = document.querySelectorAll('.draggable');
+  //   [].forEach.call(listItens, function (item) {
+  //     item.classList.remove('over');
+  //   });
+  // }
 
   function addEventsDragAndDrop(el) {
     el.addEventListener('dragstart', dragStart, false);
@@ -149,8 +155,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var listItens = document.querySelectorAll('li');
   [].forEach.call(listItens, function (item) {
     addEventsDragAndDrop(item);
+    btn();
   });
-
+  
 
   document.getElementById('todo-btn').addEventListener('click', function () {
     document.getElementById("todoBtn").classList.toggle('Active');
