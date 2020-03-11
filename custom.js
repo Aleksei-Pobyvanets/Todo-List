@@ -114,8 +114,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
   //Drag n Drop
-  var elemLi = document.querySelector('li');
-  var elemUl = document.querySelectorAll('.Dr');
+  var elemLi = document.querySelectorAll('li');
+  var elemUl = document.querySelectorAll('ul');
+  var remove = document.querySelector('.draggable');
 
   function dragStart(e) {
     dragSrcEl = this;
@@ -128,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
     console.log(dragOver)
-    return false;
+    // return false;
   }
 
   function dragDrop(e) {
@@ -136,8 +137,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       dragSrcEl.innerHTML = this.innerHTML;
       this.innerHTML = e.dataTransfer.getData('text/html');
       console.log(dragDrop)
+    }else if(elemUl = this){
+      var newData = ev.dataTransfer.getData("text/html");
+      ev.target.appendChild(document.getElementById('listLi'));
     }
-    return false;
+    // return false;
   }
 
   // function dragEnd(e) {
@@ -147,15 +151,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
   //   });
   // }
 
-  function addEventsDragAndDrop(el) {
-    el.addEventListener('dragstart', dragStart, false);
-    el.addEventListener('dragover', dragOver, false);
-    el.addEventListener('drop', dragDrop, false);
+  function addEventsDragAndDrop(dragSrcEl) {
+    dragSrcEl.addEventListener('dragstart', dragStart);
+    dragSrcEl.addEventListener('dragover', dragOver);
+    dragSrcEl.addEventListener('drop', dragDrop);
   }
-  var listItens = document.querySelectorAll('li');
-  [].forEach.call(listItens, function (item) {
+
+  var listItens = document.querySelectorAll('.draggable');
+  [].forEach.call(listItens, function(item) {
     addEventsDragAndDrop(item);
-    btn();
   });
   
 
