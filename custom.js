@@ -138,8 +138,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       this.innerHTML = e.dataTransfer.getData('text/html');
       console.log(dragDrop)
     }else if(elemUl = this){
-      var newData = ev.dataTransfer.getData("text/html");
-      ev.target.appendChild(document.getElementById('listLi'));
+
     }
     // return false;
   }
@@ -160,7 +159,42 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var listItens = document.querySelectorAll('.draggable');
   [].forEach.call(listItens, function(item) {
     addEventsDragAndDrop(item);
+    return dragAndDrop();
   });
+  const dragAndDrop = () => {
+    const card = document.querySelector('listLi');
+    const cells = document.querySelectorAll('Dr');
+    const dragStart = function () {
+        setTimeout(() => {
+            this.classList.add('hide');
+        }, 0);
+    };
+    const dragEnd = function () {
+        this.classList.remove('hide');
+    };
+    const dragOver = function (evt) {
+        evt.preventDefault();
+    };
+    const dragEnter = function (evt) {
+        evt.preventDefault();
+        this.classList.add('hovered');
+    };
+    const dragLeave = function () {
+        this.classList.remove('hovered');
+    };
+    const dragDrop = function () {
+        this.append(card);
+    };
+    cells.forEach(cell => {
+        cell.addEventListener('dragover', dragOver);
+        cell.addEventListener('dragenter', dragEnter);
+        cell.addEventListener('dragleave', dragLeave);
+        cell.addEventListener('drop', dragDrop);
+    });
+    card.addEventListener('dragstart', dragStart);
+    card.addEventListener('dragend', dragEnd);
+  };
+  
   
 
   document.getElementById('todo-btn').addEventListener('click', function () {
