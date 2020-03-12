@@ -137,8 +137,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       dragSrcEl.innerHTML = this.innerHTML;
       this.innerHTML = e.dataTransfer.getData('text/html');
       console.log(dragDrop)
-    }else if(elemUl = this){
-
     }
     // return false;
   }
@@ -155,46 +153,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
     dragSrcEl.addEventListener('dragover', dragOver);
     dragSrcEl.addEventListener('drop', dragDrop);
   }
+  function addEventsDragAndDrop1(elemLi) {
+    elemLi.addEventListener('dragstart', dragStart);
+    elemLi.addEventListener('dragover', dragOver);
+    elemUl.addEventListener('drop', dragDrop);
+  }
 
   var listItens = document.querySelectorAll('.draggable');
   [].forEach.call(listItens, function(item) {
     addEventsDragAndDrop(item);
+    addEventsDragAndDrop1(item);
     return dragAndDrop();
   });
-  const dragAndDrop = () => {
-    const card = document.querySelector('listLi');
-    const cells = document.querySelectorAll('Dr');
-    const dragStart = function () {
-        setTimeout(() => {
-            this.classList.add('hide');
-        }, 0);
-    };
-    const dragEnd = function () {
-        this.classList.remove('hide');
-    };
-    const dragOver = function (evt) {
-        evt.preventDefault();
-    };
-    const dragEnter = function (evt) {
-        evt.preventDefault();
-        this.classList.add('hovered');
-    };
-    const dragLeave = function () {
-        this.classList.remove('hovered');
-    };
-    const dragDrop = function () {
-        this.append(card);
-    };
-    cells.forEach(cell => {
-        cell.addEventListener('dragover', dragOver);
-        cell.addEventListener('dragenter', dragEnter);
-        cell.addEventListener('dragleave', dragLeave);
-        cell.addEventListener('drop', dragDrop);
-    });
-    card.addEventListener('dragstart', dragStart);
-    card.addEventListener('dragend', dragEnd);
-  };
-  
   
 
   document.getElementById('todo-btn').addEventListener('click', function () {
