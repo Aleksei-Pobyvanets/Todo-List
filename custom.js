@@ -157,7 +157,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var listItens = document.querySelectorAll('.draggable');
   [].forEach.call(listItens, function(item) {
     addEventsDragAndDrop(item);
-    addEventsDragAndDrop1(item);
     return dragAndDrop();
   });
   
