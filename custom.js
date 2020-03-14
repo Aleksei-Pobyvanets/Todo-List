@@ -153,11 +153,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     dragSrcEl.addEventListener('dragover', dragOver);
     dragSrcEl.addEventListener('drop', dragDrop);
   }
-  function addEventsDragAndDrop1(elemLi) {
-    elemLi.addEventListener('dragstart', dragStart);
-    elemLi.addEventListener('dragover', dragOver);
-    elemUl.addEventListener('drop', dragDrop);
-  }
 
   var listItens = document.querySelectorAll('.draggable');
   [].forEach.call(listItens, function(item) {
