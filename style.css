@@ -179,11 +179,14 @@
     float: left;
     position: relative;
     display: block;
+    padding: 0;
 }
 .divList1{
     width: 275px;
     float: right;
+    padding: 0;
 }
-.hide {
-    display: none;
+.ul__Main_list {
+    display: block;
+    padding: 0;
 }

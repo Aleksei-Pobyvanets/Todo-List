@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
   //Drag n Drop
-  var elemLi = document.querySelectorAll('li');
+  var elemLi = document.querySelector('li');
   var elemUl = document.querySelectorAll('ul');
   var remove = document.querySelector('.draggable');
 
@@ -129,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
     console.log(dragOver)
-    // return false;
   }
 
   function dragDrop(e) {
@@ -138,15 +137,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       this.innerHTML = e.dataTransfer.getData('text/html');
       console.log(dragDrop)
     }
-    // return false;
   }
-
-  // function dragEnd(e) {
-  //   var listItens = document.querySelectorAll('.draggable');
-  //   [].forEach.call(listItens, function (item) {
-  //     item.classList.remove('over');
-  //   });
-  // }
 
   function addEventsDragAndDrop(dragSrcEl) {
     dragSrcEl.addEventListener('dragstart', dragStart);
