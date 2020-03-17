@@ -3,9 +3,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   var data = {
     todo: [],
-    complete: []
+    complete: [],
   }
-
+  
+  function setCookies(){
+    document.cookie = data;
+  }
   function chekInp() {
     var value = document.getElementById('item').value;
     if (value === '') {
@@ -16,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       console.log(data)
       addItemTodo(value);
       var value = document.getElementById('item').value = "";
+      setCookies();
     }
   }
   document.getElementById('add').addEventListener('click', function () {
@@ -35,9 +39,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     if (id === 'todo') {
       data.todo.splice(data.todo.indexOf(value), 1);
+      // function setCookie1() {
+      //   document.cookie = data.todo.value;
+      // }
+      // setCookie1()
     } else {
       data.complete.splice(data.complete.indexOf(value), 1);
-    }
+    //   function setCookie2() {
+    //     document.cookie = data.complete.value;
+    //     console.log(document.cookie = data)
+    //   }
+    //   setCookie2()
+     }
     console.log(data)
     parent.removeChild(item);
   }
@@ -89,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     buttons.appendChild(remove);
     buttons.appendChild(complete);
     todoItem.appendChild(buttons);
+    
   }
 
   function createTodoEl(text) {
@@ -98,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     item.setAttribute('draggable', true);
     item.innerText = text;
     addEventsDragAndDrop(item);
+
     return item;
   }
 
