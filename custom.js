@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     complete: [],
   }
   
-  function setCookies(){
-    document.cookie = data;
+  function setCookies(data){
+    document.cookie = 'data'
   }
+  setCookies();
+
   function chekInp() {
     var value = document.getElementById('item').value;
     if (value === '') {
@@ -19,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       console.log(data)
       addItemTodo(value);
       var value = document.getElementById('item').value = "";
-      setCookies();
     }
   }
   document.getElementById('add').addEventListener('click', function () {
