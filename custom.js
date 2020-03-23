@@ -6,10 +6,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     complete: [],
   }
   
-  function setCookies(data){
-    document.cookie = 'data'
+  function setCookies(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
-  setCookies();
+  
 
   function chekInp() {
     var value = document.getElementById('item').value;
@@ -62,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var parent = item.parentNode;
     var id = parent.id;
     var value = item.innerText;
+    setCookies('todo', JSON.stringify(data),1);
     if (id === 'todo') {
       data.todo.splice(data.todo.indexOf(value), 1);
       data.complete.push(value);
