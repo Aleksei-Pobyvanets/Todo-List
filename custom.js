@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    console.log('cookie', cname, cvalue, exdays)
   }
   
 
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //   }
     //   setCookie2()
      }
-    console.log(data)
+    // console.log(data)
     parent.removeChild(item);
   }
   
@@ -64,8 +65,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var item = this.parentNode.parentNode;
     var parent = item.parentNode;
     var id = parent.id;
-    var value = item.innerText;
-    setCookies('todo', JSON.stringify(data),1);
+    var value = item.innerText; 
     if (id === 'todo') {
       data.todo.splice(data.todo.indexOf(value), 1);
       data.complete.push(value);
@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       return complete
     }
     var buttons = document.createElement('div');
+    setCookies('todo', JSON.stringify(data),1);
     buttons.classList.add('buttons');
     var complete = complete();
     var remove = remove();
