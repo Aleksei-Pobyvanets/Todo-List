@@ -44,19 +44,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     if (id === 'todo') {
       data.todo.splice(data.todo.indexOf(value), 1);
-      // function setCookie1() {
-      //   document.cookie = data.todo.value;
-      // }
-      // setCookie1()
     } else {
       data.complete.splice(data.complete.indexOf(value), 1);
-    //   function setCookie2() {
-    //     document.cookie = data.complete.value;
-    //     console.log(document.cookie = data)
-    //   }
-    //   setCookie2()
      }
-    // console.log(data)
     parent.removeChild(item);
   }
   
@@ -77,10 +67,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     parent.removeChild(item);
     target.insertBefore(item, target.childNodes[0]);
   }
-  function btn() {
-    completeItem();
-    removeItem();
-  }
+  
 
   function buttons(todoItem) {
     function remove() {
@@ -117,8 +104,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     item.classList.add('draggable')
     item.setAttribute('draggable', true);
     item.innerText = text;
-    addEventsDragAndDrop(item);
-
+    // addEventsDragAndDrop(item);
     return item;
   }
 
@@ -131,47 +117,107 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     todo.appendChild(todoItem);
     parent.insertBefore(todoItem, parent.childNodes[0]);
+    DragNDrop()
   }
 
 
   //Drag n Drop
-  var elemLi = document.querySelector('li');
-  var elemUl = document.querySelectorAll('ul');
-  var remove = document.querySelector('.draggable');
 
-  function dragStart(e) {
-    dragSrcEl = this;
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/html', this.innerHTML);
-    console.log(dragStart)
-  };
+  function DragNDrop(){
+    initDragAndDrop();
 
-  function dragOver(e) {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-    console.log(dragOver)
+  function initDragAndDrop() {
+      let draggables = document.querySelectorAll(".draggable");
+      var dropZones = document.querySelectorAll(".Dr");
+      initDraggables(draggables);
+      initDropZones(dropZones);
   }
-
-  function dragDrop(e) {
-    if (dragSrcEl != this) {
-      dragSrcEl.innerHTML = this.innerHTML;
-      this.innerHTML = e.dataTransfer.getData('text/html');
-      console.log(dragDrop)
-    }
-  }
-
-  function addEventsDragAndDrop(dragSrcEl) {
-    dragSrcEl.addEventListener('dragstart', dragStart);
-    dragSrcEl.addEventListener('dragover', dragOver);
-    dragSrcEl.addEventListener('drop', dragDrop);
-  }
-
-  var listItens = document.querySelectorAll('.draggable');
-  [].forEach.call(listItens, function(item) {
-    addEventsDragAndDrop(item);
-    return dragAndDrop();
-  });
   
+  function initDraggables(draggables) {
+      for (const draggable of draggables) {
+          initDraggable(draggable);
+      }
+  }
+  
+  function initDropZones(dropZones) {
+      for (let dropZone of dropZones) {
+          initDropZone(dropZone);
+      }
+  }
+  
+  function initDraggable(draggable) {
+      draggable.addEventListener("dragstart", dragStartHandler);
+      draggable.addEventListener("drag", dragHandler);
+      draggable.addEventListener("dragend", dragEndHandler);
+      draggable.setAttribute("draggable", "true");
+  }
+  
+  function initDropZone(dropZone) {
+      dropZone.addEventListener("dragenter", dropZoneEnterHandler);
+      dropZone.addEventListener("dragover", dropZoneOverHandler);
+      dropZone.addEventListener("dragleave", dropZoneLeaveHandler);
+      dropZone.addEventListener("drop", dropZoneDropHandler);
+  }
+  
+  function dragStartHandler(e) {
+      setDropZonesHighlight();
+      this.classList.add('dragged', 'drag-feedback');
+      e.dataTransfer.setData("type/dragged-box", 'dragged');
+      e.dataTransfer.setData("text/plain", this.textContent.trim());
+  }
+  
+  function dragHandler() {
+  }
+  
+  function dragEndHandler() {
+      setDropZonesHighlight(false);
+      this.classList.remove('dragged');
+  }
+  
+  function dropZoneEnterHandler(e) {
+      if (e.dataTransfer.types.includes('type/dragged-box')) {
+          this.classList.add("over-zone");
+          e.preventDefault();
+      }
+  }
+  
+  function dropZoneOverHandler(e) {
+      if (e.dataTransfer.types.includes('type/dragged-box')) {
+          e.preventDefault();
+      }
+  }
+  
+  
+  function dropZoneLeaveHandler(e) {
+      if (e.dataTransfer.types.includes('type/dragged-box') &&
+          e.relatedTarget !== null &&
+          e.currentTarget !== e.relatedTarget.closest('.drop-zone')) {
+          this.classList.remove("over-zone");
+      }
+  }
+  
+  
+  function dropZoneDropHandler(e) {
+      let draggedElement = document.querySelector('.dragged');
+      e.currentTarget.appendChild(draggedElement);
+      e.preventDefault();
+  
+  }
+  
+  
+  
+  function setDropZonesHighlight(highlight = true) {
+      const dropZones = document.querySelectorAll(".drop-zone");
+      for (const dropZone of dropZones) {
+          if (highlight) {
+              dropZone.classList.add("active-zone");
+          } else {
+              dropZone.classList.remove("active-zone");
+              dropZone.classList.remove("over-zone");
+          }
+      }
+  }
+  }
 
   document.getElementById('todo-btn').addEventListener('click', function () {
     document.getElementById("todoBtn").classList.toggle('Active');

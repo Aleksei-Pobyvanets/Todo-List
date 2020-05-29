@@ -93,12 +93,12 @@
 }
 .listUL{
     position: relative;
-    padding: 20px 0px 10px 0px;
+    padding: 35px 0px 35px 0px;
     width: 275px;
 }
 .listUL2{
     position: relative;
-    padding: 20px 0px 10px 0px;
+    padding: 35px 0px 35px 0px;
     width: 275px;
 }
 .listLi{
@@ -189,4 +189,7 @@
 .ul__Main_list {
     display: block;
     padding: 0;
+}
+.Dr{
+    background: #0A0A0A;
 }
